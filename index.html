@@ -140,8 +140,7 @@ Visit Official BTS Music Video Channel
 
 <h2><font color="purple">💜 Fan Feedback Form 💜</font></h2>
 
-<form action="https://script.google.com/macros/s/AKfycbyd6jmMwRyLfpXB6i2BHHELXB1MxirEVd93a1jHOMp8gsBkNy1qGN0KvW4_789G8VACGA/exec"
-method="post">
+<<form id="fanForm">>
 
 Name:
 <br>
@@ -187,6 +186,31 @@ Why do you love BTS?
 💜 Borahae ARMY 💜
 
 </center>
+    <script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbyd6jmMwRyLfpXB6i2BHHELXB1MxirEVd93a1jHOMp8gsBkNy1qGN0KvW4_789G8VACGA/exec";
+
+document.getElementById("fanForm").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const formData = new FormData(this);
+
+    fetch(scriptURL, {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert("Thank you for your feedback!");
+        this.reset();
+    })
+    .catch(error => {
+        alert("Error submitting feedback.");
+        console.error(error);
+    });
+
+});
+</script>
 
 
 </body>
