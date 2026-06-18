@@ -165,6 +165,17 @@ Why do you love BTS?<br>
 <input type="submit" value="Submit Feedback">
 
 </form>
+    <h2>Fan Submissions</h2>
+
+<table border="1" cellpadding="10" id="fanTable">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Favorite Member</th>
+        <th>Favorite Song</th>
+        <th>reason</th>
+    </tr>
+</table>
 <hr color="purple">
 
 <center>
@@ -200,6 +211,37 @@ document.getElementById("fanForm").addEventListener("submit", function(e) {
     });
 
 });
+
+</script>
+    <script>
+
+document.getElementById("fanForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let name = document.querySelector('[name="name"]').value;
+    let email = document.querySelector('[name="email"]').value;
+    let member = document.querySelector('[name="member"]').value;
+    let song = document.querySelector('[name="song"]').value;
+
+    let table = document.getElementById("fanTable");
+
+    let row = table.insertRow(-1);
+
+    row.innerHTML = `
+        <td>${name}</td>
+        <td>${email}</td>
+        <td>${member}</td>
+        <td>${song}</td>
+        <td><button onclick="deleteRow(this)">Delete</button></td>
+    `;
+
+    this.reset();
+});
+
+function deleteRow(btn){
+    btn.parentNode.parentNode.remove();
+}
 
 </script>
 </body>
