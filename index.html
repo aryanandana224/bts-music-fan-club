@@ -140,39 +140,31 @@ Visit Official BTS Music Video Channel
 
 <h2><font color="purple">💜 Fan Feedback Form 💜</font></h2>
 
-<<form id="fanForm">>
+<form id="fanForm">
 
-Name:
-<br>
-<input type="text" name="name" size="40" required>
+Name:<br>
+<input type="text" name="name" required>
 <br><br>
 
-Email:
-<br>
-<input type="email" name="email" size="40" required>
+Email:<br>
+<input type="email" name="email" required>
 <br><br>
 
-Favorite BTS Member:
-<br>
-<input type="text" name="member" size="40">
+Favorite BTS Member:<br>
+<input type="text" name="member">
 <br><br>
 
-Favorite BTS Song:
-<br>
-<input type="text" name="song" size="40">
+Favorite BTS Song:<br>
+<input type="text" name="song">
 <br><br>
 
-Why do you love BTS?
-<br>
+Why do you love BTS?<br>
 <textarea name="message" rows="5" cols="50"></textarea>
 <br><br>
 
 <input type="submit" value="Submit Feedback">
 
 </form>
-
-<p id="msg"></p>
-
 <hr color="purple">
 
 <center>
@@ -183,11 +175,9 @@ Why do you love BTS?
 
 <br><br>
 
-💜 Borahae ARMY 💜
-
-</center>
     <script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbyd6jmMwRyLfpXB6i2BHHELXB1MxirEVd93a1jHOMp8gsBkNy1qGN0KvW4_789G8VACGA/exec";
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbxweZolJkvqGGoonW_cjR4Rnxgv4TZTmdswYdTB47u6NM9vq1wdUxlUNfLa3--KyKMfag/exec";
 
 document.getElementById("fanForm").addEventListener("submit", function(e) {
 
@@ -202,7 +192,7 @@ document.getElementById("fanForm").addEventListener("submit", function(e) {
     .then(response => response.text())
     .then(data => {
         alert("Thank you for your feedback!");
-        this.reset();
+        document.getElementById("fanForm").reset();
     })
     .catch(error => {
         alert("Error submitting feedback.");
@@ -210,10 +200,7 @@ document.getElementById("fanForm").addEventListener("submit", function(e) {
     });
 
 });
+
 </script>
-
-
 </body>
 </html>
-
-
