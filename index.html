@@ -4,6 +4,36 @@
 <head>
 <meta charset="UTF-8">
     <title>BTS MUSIC FAN CLUB & ALBUM HUB</title>
+
+    <style>
+
+    h1 {
+        font-size: 18pt;
+    }
+
+    h2, h3 {
+        font-size: 14pt;
+    }
+
+    p, li, td, th {
+        font-size: 12pt;
+        text-align: justify;
+    }
+
+    a {
+        color: purple;
+    }
+
+    a:visited {
+        color: darkviolet;
+    }
+
+    a:hover {
+        color: blue;
+    }
+
+    </style>
+
 </head>
 
 
@@ -159,7 +189,7 @@ Favorite BTS Song:<br>
 <br><br>
 
 Why do you love BTS?<br>
-<textarea name="message" rows="5" cols="50"></textarea>
+<textarea name="message" rows="6" cols="60"></textarea>
 <br><br>
 
 <input type="submit" value="Submit Feedback">
@@ -173,7 +203,8 @@ Why do you love BTS?<br>
         <th>Email</th>
         <th>Favorite Member</th>
         <th>Favorite Song</th>
-        <th>reason</th>
+        <th>why</th>
+        <th>action</th>
     </tr>
 </table>
 <hr color="purple">
@@ -223,6 +254,7 @@ document.getElementById("fanForm").addEventListener("submit", function(e){
     let email = document.querySelector('[name="email"]').value;
     let member = document.querySelector('[name="member"]').value;
     let song = document.querySelector('[name="song"]').value;
+    let why=document.querySelector('[name="why"]').value;
 
     let table = document.getElementById("fanTable");
 
@@ -233,6 +265,7 @@ document.getElementById("fanForm").addEventListener("submit", function(e){
         <td>${email}</td>
         <td>${member}</td>
         <td>${song}</td>
+        <td>${why}</td>
         <td><button onclick="deleteRow(this)">Delete</button></td>
     `;
 
